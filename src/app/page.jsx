@@ -70,10 +70,11 @@ export default function Home() {
           variants={item}
           className="max-w-md font-body text-sm sm:text-[15px] leading-relaxed text-fg-muted"
         >
-          I work on the networks that keep Bangladesh connected — from
-          transmission infrastructure to the systems behind them. This site is
-          being built to share that work properly. Leave your email and
-          I&apos;ll let you know the moment it goes live.
+          I&apos;m Rasel Rana, Manager (Technical) at Bangladesh
+          Telecommunication Company Limited. With a strong foundation in
+          technical operations and management, I&apos;m dedicated to delivering
+          reliable, efficient, and forward-thinking solutions within the
+          telecommunications sector.
         </motion.p>
 
         {/* Email capture */}
@@ -87,9 +88,16 @@ export default function Home() {
         {/* Footer */}
         <motion.div
           variants={item}
-          className="mt-20 font-mono text-[11px] tracking-widest2 text-fg-muted/60 uppercase"
+          className="mt-20 font-mono text-[11px] tracking-widest2 text-fg-muted/60 uppercase flex items-center gap-3"
         >
-          Dhaka, Bangladesh · Est. 2026
+          <span>Dhaka, Bangladesh</span>
+          <span className="text-fg-muted/30">/</span>
+          <a
+            href="mailto:rasel.rana@btcl.gov.bd"
+            className="hover:text-accent transition-colors normal-case tracking-normal"
+          >
+            rasel.rana@btcl.gov.bd
+          </a>
         </motion.div>
       </motion.div>
     </main>
