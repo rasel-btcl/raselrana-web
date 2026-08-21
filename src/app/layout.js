@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"; // this is for Vercel Analytics, you can remove it if you don&apos;t want analytics
 import { IBM_Plex_Mono, IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -44,6 +45,9 @@ export default function RootLayout({ children }) {
       <body className="font-body antialiased">
         <div className="bg-noise" aria-hidden="true" />
         {children}
+        <Analytics /* this is for Vercel Analytics, you can remove it if you don&apos;t
+        want analytics */
+        />
       </body>
     </html>
   );
