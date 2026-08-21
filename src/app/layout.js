@@ -1,4 +1,4 @@
-import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -23,12 +23,12 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-  title: "Your Name — Telecommunications Engineer",
+  title: "Rasel Rana - BTCL",
   description:
     "Electrical & Electronic Engineer specializing in telecommunications. Portfolio launching soon.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://raselrana.com.bd"),
   openGraph: {
-    title: "Your Name — Telecommunications Engineer",
+    title: "Rasel Rana — BTCL",
     description:
       "Electrical & Electronic Engineer specializing in telecommunications. Portfolio launching soon.",
     type: "website",
@@ -37,7 +37,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
       <body className="font-body antialiased">
         <div className="bg-noise" aria-hidden="true" />
         {children}
