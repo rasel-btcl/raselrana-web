@@ -1,6 +1,6 @@
 "use client";
 
-import EmailForm from "@/components/EmailForm";
+import { ContactForm } from "@/components";
 import SignalWave from "@/components/SignalWave";
 import { motion } from "motion/react";
 
@@ -77,12 +77,12 @@ export default function Home() {
           telecommunications sector.
         </motion.p>
 
-        {/* Email capture */}
+        {/* Contact form */}
         <motion.div
           variants={item}
           className="mt-10 w-full flex justify-center"
         >
-          <EmailForm />
+          <ContactForm />
         </motion.div>
 
         {/* Footer */}
