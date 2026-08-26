@@ -92,11 +92,23 @@ export default function Home() {
         >
           <span>Dhaka, Bangladesh</span>
           <span className="text-fg-muted/30">/</span>
+
           <a
-            href="mailto:rasel.rana@btcl.gov.bd"
+            href="mailto:contact@raselrana.com.bd"
             className="hover:text-accent transition-colors normal-case tracking-normal"
           >
-            rasel.rana@btcl.gov.bd
+            contact@raselrana.com.bd
+          </a>
+
+          {/* Add blog link here */}
+          <span className="text-fg-muted/30">/</span>
+          <a
+            href="https://raselrana.com.bd/blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors normal-case tracking-normal"
+          >
+            Blog
           </a>
         </motion.div>
       </motion.div>
