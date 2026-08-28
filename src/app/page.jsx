@@ -1,7 +1,7 @@
 "use client";
 
 import { ContactForm } from "@/components";
-import SignalWave from "@/components/SignalWave";
+import SignalWave from "@/components/ui/SignalWave";
 import { motion } from "motion/react";
 
 const container = {
