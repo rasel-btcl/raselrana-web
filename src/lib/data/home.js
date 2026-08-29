@@ -15,8 +15,7 @@ export const profile = {
 };
 
 export const aboutPreview = {
-  body:
-    "I work at the intersection of telecommunications infrastructure and electrical engineering — from transmission networks to the power systems that keep them alive. Over the past several years at BTCL, that's meant everything from field-level troubleshooting to planning decisions that affect service for thousands of subscribers.",
+  body: "I work at the intersection of telecommunications infrastructure and electrical engineering — from transmission networks to the power systems that keep them alive. Over the past several years at BTCL, that's meant everything from field-level troubleshooting to planning decisions that affect service for thousands of subscribers.",
   href: "/about",
 };
 
@@ -114,7 +113,6 @@ export const achievementsPreview = [
 
 export const contactCta = {
   heading: "Let's talk shop.",
-  body:
-    "Open to conversations on network engineering, telecom infrastructure, or technical collaboration.",
-  email: "hello@raselrana.com.bd",
+  body: "Open to conversations on network engineering, telecom infrastructure, or technical collaboration.",
+  email: "contact@raselrana.com.bd",
 };
