@@ -1,77 +1,90 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 /**
- * SignalWave — the page's signature element.
- * A hand-drawn oscilloscope-style trace that draws itself in on load,
- * then carries a traveling pulse dot to suggest a live signal on the line.
- * Directly references the subject: transmission, carrier waves, telecom.
+ * SignalWave — the site's signature mark.
+ *
+ * variant="hero"   → large, draws itself on load, faint ambient pulse loop
+ * variant="divider"→ thin full-width trace used between sections
+ *
+ * Colors are read from CSS vars (--signal / --pulse) so the mark adapts
+ * automatically to light/dark without any extra classes.
+ *
+ * NOTE: if you already have a SignalWave implementation wired into the
+ * Navbar, compare the two and keep whichever is more complete — this one
+ * adds a "divider" variant for use between homepage sections, so you may
+ * want to merge that variant into your existing component instead of
+ * having two files.
  */
-export default function SignalWave() {
-  const prefersReducedMotion = useReducedMotion();
+export default function SignalWave({ variant = "hero", className = "" }) {
+  if (variant === "divider") {
+    return (
+      <div className={`relative h-px w-full overflow-hidden ${className}`}>
+        <div className="absolute inset-0 bg-[var(--line)]" />
+        <motion.div
+          className="absolute top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[var(--pulse)]"
+          initial={{ left: "-2%" }}
+          animate={{ left: "102%" }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            repeatDelay: 2,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+    );
+  }
 
+  // Hand-authored path: a carrier signal that settles into a clean,
+  // regular sine — a small visual thesis for "engineering brings signal
+  // out of noise."
   const path =
-    "M0,50 C40,15 80,85 120,50 C160,15 200,85 240,50 C280,15 320,85 360,50 " +
-    "C400,15 440,85 480,50 C520,15 560,85 600,50 C640,15 680,85 720,50 " +
-    "C760,15 800,85 800,50";
-
-  const dotX = [0, 120, 240, 360, 480, 600, 720, 800];
-  const dotY = [50, 50, 50, 50, 50, 50, 50, 50];
-  // approximate peak/trough offsets so the dot visibly rides the wave
-  const dotYOffsets = [0, -22, 22, -22, 22, -22, 22, 0];
-  const dotCy = dotY.map((y, i) => y + dotYOffsets[i]);
+    "M0,60 L20,60 L28,30 L36,90 L44,45 L52,75 L60,60 " +
+    "C 90,60 90,20 120,20 C 150,20 150,100 180,100 " +
+    "C 210,100 210,20 240,20 C 270,20 270,100 300,100 " +
+    "C 330,100 330,20 360,20 C 390,20 390,60 420,60 L440,60";
 
   return (
-    <div className="relative w-full h-[72px] sm:h-24">
-      <svg
-        viewBox="0 0 800 100"
-        preserveAspectRatio="none"
-        className="w-full h-full"
-        aria-hidden="true"
-      >
-        {/* faint baseline for reference, like a scope grid */}
-        <line
-          x1="0"
-          y1="50"
-          x2="800"
-          y2="50"
-          stroke="#1E293B"
-          strokeWidth="1"
-        />
-
-        <motion.path
-          d={path}
-          fill="none"
-          stroke="#F4A93B"
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
-        />
-
-        {!prefersReducedMotion && (
-          <motion.circle
-            r="4"
-            fill="#F4A93B"
-            initial={{ opacity: 0 }}
-            animate={{
-              cx: dotX,
-              cy: dotCy,
-              opacity: [0, 1, 1, 1, 1, 1, 1, 0],
-            }}
-            transition={{
-              duration: 3.2,
-              ease: "linear",
-              delay: 1.6,
-              repeat: Infinity,
-              repeatDelay: 0.6,
-            }}
-            style={{ filter: "drop-shadow(0 0 4px #F4A93B)" }}
-          />
-        )}
-      </svg>
-    </div>
+    <svg
+      viewBox="0 0 440 120"
+      className={className}
+      role="img"
+      aria-label="Signal waveform settling from noise into a clean sine wave"
+    >
+      <motion.path
+        d={path}
+        fill="none"
+        stroke="var(--line)"
+        strokeWidth="1"
+        opacity="0.6"
+      />
+      <motion.path
+        d={path}
+        fill="none"
+        stroke="var(--signal)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        pathLength={1}
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 2.2, ease: "easeInOut" }}
+      />
+      <motion.circle
+        r="4"
+        fill="var(--pulse)"
+        initial={{ offsetDistance: "0%", opacity: 0 }}
+        animate={{ offsetDistance: "100%", opacity: [0, 1, 1, 0] }}
+        transition={{
+          duration: 3,
+          delay: 2.4,
+          repeat: Infinity,
+          repeatDelay: 1.5,
+          ease: "linear",
+        }}
+        style={{ offsetPath: `path("${path}")` }}
+      />
+    </svg>
   );
 }
