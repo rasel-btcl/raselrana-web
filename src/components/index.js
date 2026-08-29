@@ -13,5 +13,7 @@ export { default as FocusAreas } from "./sections/homepage/FocusAreas";
 export { default as Hero } from "./sections/homepage/Hero";
 export { default as ProjectsPreview } from "./sections/homepage/ProjectsPreview";
 
-// Forms
-export { default as ContactForm } from "./forms/ContactForm";
+// Sections — contact page
+export { default as ContactForm } from "./sections/contact/ContactForm";
+export { default as ContactHero } from "./sections/contact/ContactHero";
+export { default as ContactInfo } from "./sections/contact/ContactInfo";
