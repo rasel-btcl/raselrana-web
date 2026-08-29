@@ -53,10 +53,10 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 font-[family-name:var(--font-body)] text-sm text-[var(--paper)]/80">
               <li>
                 <a
-                  href="mailto:hello@raselrana.com.bd"
+                  href="mailto:contact@raselrana.com.bd"
                   className="hover:text-[var(--pulse)]"
                 >
-                  hello@raselrana.com.bd
+                  contact@raselrana.com.bd
                 </a>
               </li>
               <li>
