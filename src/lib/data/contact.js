@@ -30,7 +30,7 @@ export const contactChannels = [
   {
     id: "response-time",
     label: "Response time",
-    value: "Within 2–3 business days",
+    value: "Within 4–5 business days",
     href: null,
     icon: "Clock",
     note: null,
