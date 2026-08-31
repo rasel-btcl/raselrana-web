@@ -24,3 +24,9 @@ export { default as AboutFocus } from "./sections/about/AboutFocus";
 export { default as AboutHero } from "./sections/about/AboutHero";
 export { default as AboutHighlights } from "./sections/about/AboutHighlights";
 export { default as AboutStory } from "./sections/about/AboutStory";
+
+// Sections — achievements page
+export { default as AchievementsCompetitions } from "./sections/achievements/AchievementsCompetitions";
+export { default as AchievementsHero } from "./sections/achievements/AchievementsHero";
+export { default as AchievementsLeadership } from "./sections/achievements/AchievementsLeadership";
+export { default as AchievementsPress } from "./sections/achievements/AchievementsPress";

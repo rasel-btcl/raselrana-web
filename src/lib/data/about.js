@@ -57,6 +57,14 @@ export const aboutHighlights = {
       org: "[Placeholder University]",
       description: "[Placeholder — relevant coursework, thesis, or honors.]",
     },
+    // inside aboutHighlights.timeline, add:
+    {
+      year: "[Placeholder]",
+      title: "Ex-President",
+      org: "DUET Robotics Club",
+      description:
+        "Led the university robotics club, guiding the team through national-round competitions — placements included a Champion title and two runner-up finishes, later covered in national press.",
+    },
   ],
 };
 
