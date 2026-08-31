@@ -17,3 +17,10 @@ export { default as ProjectsPreview } from "./sections/homepage/ProjectsPreview"
 export { default as ContactForm } from "./sections/contact/ContactForm";
 export { default as ContactHero } from "./sections/contact/ContactHero";
 export { default as ContactInfo } from "./sections/contact/ContactInfo";
+
+// Sections — about page
+export { default as AboutCTA } from "./sections/about/AboutCTA";
+export { default as AboutFocus } from "./sections/about/AboutFocus";
+export { default as AboutHero } from "./sections/about/AboutHero";
+export { default as AboutHighlights } from "./sections/about/AboutHighlights";
+export { default as AboutStory } from "./sections/about/AboutStory";
