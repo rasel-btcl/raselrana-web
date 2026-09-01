@@ -9,6 +9,7 @@ import MobileMenu from "./MobileMenu";
 
 const NAV_LINKS = [
   { label: "About", href: "/about" },
+  { label: "Journey", href: "/journey" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
   { label: "Achievements", href: "/achievements" },
